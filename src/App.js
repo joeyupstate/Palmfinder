@@ -8,6 +8,7 @@ function App() {
   const [zipData, setZipData] = useState([]);
   const [zone, setZone] = useState();
   const [palmTrees, setPalmTrees] = useState();
+  const [listItems, setListItems] = useState();
 
   async function checkZip() {
     const url = `https://plant-hardiness-zone.p.rapidapi.com/zipcodes/${zipData}`;
@@ -21,17 +22,16 @@ function App() {
     try {
       const response = await fetch(url, options);
       const result = await response.json();
-      console.log(result.hardiness_zone);
       setZone(result.hardiness_zone);
-      const palmList = palmData.find((palm) => palm.id === zone); //this searches the palmdata for the matching zone
 
+      const palmList = palmData.find((palm) => palm.id === zone); //this searches the palmdata for the matching zone
       setPalmTrees(palmList.palms);
-      // const listItems = palmTrees.map((pt) => <li>{pt}</li>);
+
+      setListItems(palmTrees.map((pt) => <li>{pt}</li>));
     } catch (error) {
       console.error(error);
     }
   }
-  const listItems = palmTrees.map((pt) => <li>{pt}</li>);
 
   return (
     <div className="app">
