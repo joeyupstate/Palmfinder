@@ -7,29 +7,39 @@ import searchIcon from "./assets/search-icon.png";
 function App() {
   const [zipData, setZipData] = useState([]);
   const [zone, setZone] = useState();
-  const [palmTrees, setPalmTrees] = useState();
+  // const [palmTrees, setPalmTrees] = useState();
   const [listItems, setListItems] = useState();
 
   async function checkZip() {
-    const url = `https://plant-hardiness-zone.p.rapidapi.com/zipcodes/${zipData}`;
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key": "74d8672b18msh0a1e3329629ffabp1d9947jsndffb0cba6f05",
-        "X-RapidAPI-Host": "plant-hardiness-zone.p.rapidapi.com",
-      },
-    };
-    try {
-      const response = await fetch(url, options);
-      const result = await response.json();
-      setZone(result.hardiness_zone);
+    if (zipData === 0) {
+      setZone("Please Enter a Zip code");
+    } else {
+      const url = `https://plant-hardiness-zone.p.rapidapi.com/zipcodes/${zipData}`;
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key":
+            "74d8672b18msh0a1e3329629ffabp1d9947jsndffb0cba6f05",
+          "X-RapidAPI-Host": "plant-hardiness-zone.p.rapidapi.com",
+        },
+      };
+      try {
+        const response = await fetch(url, options);
+        const result = await response.json();
 
-      const palmList = palmData.find((palm) => palm.id === zone); //this searches the palmdata for the matching zone
-      setPalmTrees(palmList.palms);
+        setZone(result.hardiness_zone);
+        const palmList = palmData.find((palm) => palm.id === zone); //this searches the palmdata for the matching zone
+        // setPalmTrees(palmList.palms);
+        const palmTrees = palmList.palms;
 
-      setListItems(palmTrees.map((pt) => <li>{pt}</li>));
-    } catch (error) {
-      console.error(error);
+        setListItems(
+          palmTrees.map((pt) => (
+            <li key={Math.random(Math.floor + 10)}>{pt}</li>
+          ))
+        );
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
 
