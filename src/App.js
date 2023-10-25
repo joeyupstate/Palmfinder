@@ -1,6 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 import Search from "./components/Search";
+import Palms from "./components/Palms";
 import { palmData } from "./Data";
 import searchIcon from "./assets/search-icon.png";
 
@@ -12,7 +13,7 @@ function App() {
 
   async function checkZip() {
     if (zipData.length < 5 || zipData === "") {
-      alert("Please Enter A Zipcode");
+      alert("Please Enter A Valid Zipcode");
     } else {
       const url = `https://plant-hardiness-zone.p.rapidapi.com/zipcodes/${zipData}`;
       const options = {
@@ -50,7 +51,7 @@ function App() {
         <img src={searchIcon} onClick={checkZip} className="search-icon" />
       </div>
       <div>{hardinessZone}</div>
-      <ul className="palm-list">{listItems}</ul>
+      <Palms listItems={listItems} />
     </div>
   );
 }
