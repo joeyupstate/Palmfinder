@@ -6,13 +6,13 @@ import searchIcon from "./assets/search-icon.png";
 
 function App() {
   const [zipData, setZipData] = useState([]);
-  const [zone, setZone] = useState();
+  const [hardinessZone, sethardinessZone] = useState("");
   // const [palmTrees, setPalmTrees] = useState();
   const [listItems, setListItems] = useState();
 
   async function checkZip() {
-    if (zipData === 0) {
-      setZone("Please Enter a Zip code");
+    if (zipData.length < 5 || zipData === "") {
+      alert("Please Enter A Zipcode");
     } else {
       const url = `https://plant-hardiness-zone.p.rapidapi.com/zipcodes/${zipData}`;
       const options = {
@@ -26,10 +26,8 @@ function App() {
       try {
         const response = await fetch(url, options);
         const result = await response.json();
-
-        setZone(result.hardiness_zone);
+        const zone = result.hardiness_zone;
         const palmList = palmData.find((palm) => palm.id === zone); //this searches the palmdata for the matching zone
-        // setPalmTrees(palmList.palms);
         const palmTrees = palmList.palms;
 
         setListItems(
@@ -37,6 +35,8 @@ function App() {
             <li key={Math.random(Math.floor + 10)}>{pt}</li>
           ))
         );
+
+        sethardinessZone(zone);
       } catch (error) {
         console.error(error);
       }
@@ -49,7 +49,7 @@ function App() {
         <Search setZipData={setZipData} />
         <img src={searchIcon} onClick={checkZip} className="search-icon" />
       </div>
-      <div>{zone}</div>
+      <div>{hardinessZone}</div>
       <ul className="palm-list">{listItems}</ul>
     </div>
   );
