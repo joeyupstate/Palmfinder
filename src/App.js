@@ -2,13 +2,13 @@ import "./App.css";
 import React, { useState } from "react";
 import Search from "./components/Search";
 import Palms from "./components/Palms";
+import Zone from "./components/Zone";
 import { palmData } from "./Data";
 import searchIcon from "./assets/search-icon.png";
 
 function App() {
   const [zipData, setZipData] = useState([]);
   const [hardinessZone, sethardinessZone] = useState("");
-  // const [palmTrees, setPalmTrees] = useState();
   const [listItems, setListItems] = useState();
 
   async function checkZip() {
@@ -29,14 +29,17 @@ function App() {
         const result = await response.json();
         const zone = result.hardiness_zone;
         const palmList = palmData.find((palm) => palm.id === zone); //this searches the palmdata for the matching zone
+
         const palmTrees = palmList.palms;
-
-        setListItems(
-          palmTrees.map((pt) => (
-            <li key={Math.random(Math.floor + 10)}>{pt}</li>
-          ))
-        );
-
+        if (palmTrees.length === 0) {
+          setListItems("Im Sorry You Can Grow Palm Trees In This Climate");
+        } else {
+          setListItems(
+            palmTrees.map((pt) => (
+              <li key={Math.random(Math.floor + 10)}>{pt}</li>
+            ))
+          );
+        }
         sethardinessZone(zone);
       } catch (error) {
         console.error(error);
@@ -50,7 +53,7 @@ function App() {
         <Search setZipData={setZipData} />
         <img src={searchIcon} onClick={checkZip} className="search-icon" />
       </div>
-      <div>{hardinessZone}</div>
+      <Zone hardinessZone={hardinessZone} />
       <Palms listItems={listItems} />
     </div>
   );
