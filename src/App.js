@@ -48,7 +48,7 @@ function App() {
   }
 
   return (
-    <div className="ap">
+    <div className="app">
       <div className="search-bar">
         <Search setZipData={setZipData} />
         <img src={searchIcon} onClick={checkZip} className="search-icon" />
