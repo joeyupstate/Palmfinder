@@ -4,26 +4,37 @@ export const palmData = [
   {
     id: "4a",
     palms: [],
+    temp: "-30 to -25 °F ",
   },
   {
     id: "4b",
     palms: [],
+    temp: "-25 to -20 °F ",
   },
   {
     id: "5a",
     palms: [],
+    temp: "-20 to -15 °F ",
   },
   {
     id: "5b",
     palms: [],
+    temp: "-15 to -10 °F ",
   },
   {
     id: "6a",
     palms: [],
+    temp: "-10 to -5 °F ",
   },
   {
     id: "6b",
     palms: ["needle palm"],
+    temp: "-5 to 0 °F ",
+  },
+  {
+    id: "7a",
+    palms: ["Trachycarpus fortunei", "sabal-minor", "pindo-palm"],
+    temp: "0 to 5 °F ",
   },
   {
     id: "7b",
@@ -35,6 +46,7 @@ export const palmData = [
       "sago-palm",
       "cabbage-palmetto",
     ],
+    temp: "5 to 10 °F ",
   },
   {
     id: "8a",
@@ -52,6 +64,7 @@ export const palmData = [
 
       "Saw Palmetto",
     ],
+    temp: "10 to 15 °F ",
   },
   {
     id: "8b",
@@ -70,6 +83,7 @@ export const palmData = [
       "Saw Palmetto",
       "California Fan Palm",
     ],
+    temp: "15 to 20 °F ",
   },
   {
     id: "9a",
@@ -90,6 +104,7 @@ export const palmData = [
       "Bismark Palm",
       "Queen Palm-Syagrus",
     ],
+    temp: "20 to 25 °F ",
   },
   {
     id: "9b",
@@ -111,6 +126,7 @@ export const palmData = [
       "Queen Palm - Syagrus",
       "Royal Palm - Roystonea Regia",
     ],
+    temp: "25 to 30 °F ",
   },
   {
     id: "10a",
@@ -138,6 +154,7 @@ export const palmData = [
       "Florida Thatch Palm - Thrinax radiata",
       "Foxtaill Palm - Wodyetia bifurcata",
     ],
+    temp: "30 to 35 °F ",
   },
 
   {
@@ -171,5 +188,39 @@ export const palmData = [
       "Florida Thatch Palm - Thrinax radiata",
       "Foxtaill Palm - Wodyetia bifurcata",
     ],
+    temp: "35 to 40 °F ",
+  },
+  {
+    id: "11a",
+    palms: [
+      "Windmill Palm-Trachycarpus fortunei",
+      "Sabal-minor",
+      "Palmetto-Sabal-palmetto",
+      "Pindo-palm",
+      "Sago-palm",
+      "Cabbage-palmetto",
+      "Blue Hesper Palm",
+      "Mediterranian Fan Palm",
+      "Chilean Wine Palm",
+      "Chinese Fan Palm",
+      "Canary Island Date Palm",
+      "Saw Palmetto",
+      "California Fan Palm - Washingtonian Robusta",
+      "Bismark Palm",
+      "Queen Palm - Syagrus",
+      "Key Thatch Palm - Leucothrinax morrisii",
+      "Royal Palm - Roystonea Regia",
+      "Foxtail Plam - Wodyetia bifurcata",
+      "High Plateau Coconut Plam - Beccariophoenix alfredi",
+      "Bottle Palm - Hyophorbe lagenicaulis",
+      "Dwarf Majesty Palm - Ravenea hildebrandtii",
+      "Christmas Palm - Adonidia merrillii",
+      "Areca Palm - Dypsis lutescens",
+      "Coconut Palm - Cocos nucifera",
+      "Flordia Silver - Coccothrinax argentata",
+      "Florida Thatch Palm - Thrinax radiata",
+      "Foxtaill Palm - Wodyetia bifurcata",
+    ],
+    temp: "40 to 45 °F ",
   },
 ];

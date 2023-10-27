@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-
+import "../styles/ComponentStyles.css"
 // Declare a new state variable, which we'll call "count"
 
 function Search({ setZipData }) {
@@ -16,7 +16,7 @@ function Search({ setZipData }) {
     }, [zip]);
 
     return (
-        <div className="search-bar">
+        <div className="search-input-bar">
             <input
                 type="text"
                 onChange={zipInput}

@@ -1,0 +1,36 @@
+/* styles for Search.jsx */
+
+.search-input{
+    width:210px;
+     border:0px;
+    outline:0px; 
+    height: 28px;
+    border-radius: 25px;
+    background-color: #e4e7ed;;
+}
+
+.search-input:focus{
+    outline:none!important;
+}
+
+
+/* styles for Zone.jsx */
+
+.zone-container{
+    
+    font-family: "Roboto";
+}
+/* .zone-name{
+    margin-top:-15px;
+} */
+.low-temp-range{
+    margin-top:-15px;
+    text-align: center;
+
+}
+.temp-range{
+    color:#949496;;
+    margin-top:-15px;
+    font-size: 12px;
+    text-align: center;
+}
