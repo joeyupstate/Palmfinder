@@ -1,16 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Righteous&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Righteous&display=swap");
 
 .app {
-/* display: flex;
+  /* display: flex;
 flex-direction: row; */
-display: flex;
-justify-content: center;
-align-items: center;
-flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.heading{
-    font-family: "Agbalumo";
-    color:#a4c635;
+.heading {
+  font-family: "Agbalumo";
+  color: #a4c635;
 }
