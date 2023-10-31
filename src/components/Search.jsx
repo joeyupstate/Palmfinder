@@ -1,30 +1,30 @@
 import React, { useState, useEffect } from "react";
-import "../styles/ComponentStyles.css"
+import "../styles/ComponentStyles.css";
 // Declare a new state variable, which we'll call "count"
 
 function Search({ setZipData }) {
-    const [zip, setZip] = useState(0);
+  const [zip, setZip] = useState("");
 
-    const zipInput = (e) => {
-        setZip(e.target.value);
+  const zipInput = (e) => {
+    setZip(e.target.value);
 
-        setZipData(zip);
-    };
+    setZipData(zip);
+  };
 
-    useEffect(() => {
-        setZipData(zip);
-    }, [zip]);
+  useEffect(() => {
+    setZipData(zip);
+  }, [zip]);
 
-    return (
-        <div className="search-input-bar">
-            <input
-                type="text"
-                onChange={zipInput}
-                className="search-input"
-                value={zip}
-            ></input>
-        </div>
-    );
+  return (
+    <div className="search-input-bar">
+      <input
+        type="text"
+        onChange={zipInput}
+        className="search-input"
+        value={zip}
+      ></input>
+    </div>
+  );
 }
 
 export default Search;

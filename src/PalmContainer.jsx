@@ -15,17 +15,13 @@ function PalmContainer(props) {
   const [style, setStyle] = useState("palm-container-muted");
 
   const changeStyle = () => {
+    //this function makes the palm container visible once function is called.  it is used below
     if (style === "palm-container-muted") setStyle("palm-container-active");
     else setStyle("palm-container-muted");
   };
 
   async function checkZip() {
-
-    // if (props.reset == "reset") {
-    //   setZipData("");
-    // }
-    // else {
-    changeStyle(); //this makes the data container visible when the search is clicked
+    changeStyle(); //this is the above function that makes container visible
 
     if (zipData.length < 5 || zipData === "") {
       alert("Please Enter A Valid Zipcode");
@@ -59,13 +55,12 @@ function PalmContainer(props) {
         sethardinessZone("Zone" + " " + zone);
         setTempurateRange(tempRange);
         setTempTitle("Max Low Temp");
-
       } catch (error) {
         console.error(error);
       }
     }
   }
-  // }
+
   return (
     <div className="container">
       <div className="search-bar">

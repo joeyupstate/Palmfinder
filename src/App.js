@@ -7,7 +7,7 @@ function App() {
 
   const resetter = () => {
     setActivated("reset");
-    console.log("hey");
+    console.log(activated);
   };
 
   return (

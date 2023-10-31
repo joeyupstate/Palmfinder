@@ -12,4 +12,5 @@ flex-direction: row; */
 .heading {
   font-family: "Agbalumo";
   color: #a4c635;
+  cursor: pointer;
 }
