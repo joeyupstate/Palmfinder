@@ -14,6 +14,7 @@ function PalmContainer(props) {
   const [listItems, setListItems] = useState();
   const [tempTitle, setTempTitle] = useState("");
   const [style, setStyle] = useState("palm-container-muted");
+  const [pstyle, setPStyle] = useState("p-active");
 
   const changeStyle = () => {
     //this function makes the palm container visible once function is called.  it is used below
@@ -23,7 +24,7 @@ function PalmContainer(props) {
 
   async function checkZip() {
     changeStyle(); //this is the above function that makes container visible
-
+    setPStyle("p-muted")
     if (zipData.length < 5 || zipData === "") {
       alert("Please Enter A Valid Zipcode");
     } else {
@@ -68,7 +69,7 @@ function PalmContainer(props) {
         <Search setZipData={setZipData} />
         <img src={searchIcon} onClick={checkZip} className="search-icon" />
       </div>
-
+      <p className={pstyle}>Use this to application to see if you are able to grow palm trees in your city. </p>
       <div className={style}>
         <Zone
           hardinessZone={hardinessZone}

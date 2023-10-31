@@ -3,8 +3,6 @@ import React, { useState } from "react";
 import PalmContainer from "./PalmContainer";
 
 function App() {
-  const [activated, setActivated] = useState("");
-
   const resetter = () => {
     window.location.reload();
   };
@@ -14,7 +12,7 @@ function App() {
       <h1 className="heading" onClick={resetter}>
         PalmFinder
       </h1>
-      <PalmContainer reset={activated} />
+      <PalmContainer />
     </div>
   );
 }
