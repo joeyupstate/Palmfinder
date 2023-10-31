@@ -1,11 +1,16 @@
-.palm-container {
-  height: 100vh;
-  /* background-color: #f6ffd0; */
-  margin-top: 50px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-direction: column;
+.palm-container-muted {
+  display: none;
+}
+
+.palm-container-active {
+
+  background-color: #f6ffd0; 
+  border-radius: 25px;
+ margin-top: 50px;
+ display: flex;
+ justify-content: flex-start;
+ align-items: center;
+ flex-direction: column;
 }
 
 .search-bar {

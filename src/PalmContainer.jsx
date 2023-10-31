@@ -6,14 +6,27 @@ import { palmData } from "./Data";
 import searchIcon from "./assets/search-icon.png";
 import "./styles/PalmContainer.css";
 
-function PalmContainer() {
+function PalmContainer(props) {
   const [zipData, setZipData] = useState([]);
   const [hardinessZone, sethardinessZone] = useState("");
   const [tempurateRange, setTempurateRange] = useState("");
   const [listItems, setListItems] = useState();
   const [tempTitle, setTempTitle] = useState("");
+  const [style, setStyle] = useState("palm-container-muted");
+
+  const changeStyle = () => {
+    if (style === "palm-container-muted") setStyle("palm-container-active");
+    else setStyle("palm-container-muted");
+  };
 
   async function checkZip() {
+
+    // if (props.reset == "reset") {
+    //   setZipData("");
+    // }
+    // else {
+    changeStyle(); //this makes the data container visible when the search is clicked
+
     if (zipData.length < 5 || zipData === "") {
       alert("Please Enter A Valid Zipcode");
     } else {
@@ -42,15 +55,17 @@ function PalmContainer() {
             ))
           );
         }
+
         sethardinessZone("Zone" + " " + zone);
         setTempurateRange(tempRange);
         setTempTitle("Max Low Temp");
+
       } catch (error) {
         console.error(error);
       }
     }
   }
-
+  // }
   return (
     <div className="container">
       <div className="search-bar">
@@ -58,7 +73,7 @@ function PalmContainer() {
         <img src={searchIcon} onClick={checkZip} className="search-icon" />
       </div>
 
-      <div className="palm-container">
+      <div className={style}>
         <Zone
           hardinessZone={hardinessZone}
           tempurateRange={tempurateRange}
