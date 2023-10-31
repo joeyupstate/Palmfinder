@@ -6,8 +6,7 @@ function App() {
   const [activated, setActivated] = useState("");
 
   const resetter = () => {
-    setActivated("reset");
-    console.log(activated);
+    window.location.reload();
   };
 
   return (

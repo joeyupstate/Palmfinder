@@ -3,7 +3,7 @@ import "../styles/ComponentStyles.css";
 // Declare a new state variable, which we'll call "count"
 
 function Search({ setZipData }) {
-  const [zip, setZip] = useState("");
+  const [zip, setZip] = useState();
 
   const zipInput = (e) => {
     setZip(e.target.value);
@@ -21,6 +21,7 @@ function Search({ setZipData }) {
         type="text"
         onChange={zipInput}
         className="search-input"
+        placeholder="Enter a ZIP Code"
         value={zip}
       ></input>
     </div>

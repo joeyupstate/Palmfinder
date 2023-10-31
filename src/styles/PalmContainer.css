@@ -4,15 +4,20 @@
 
 .palm-container-active {
 
-  background-color: #f6ffd0; 
+  background-color: #f5f6f7;
   border-radius: 25px;
  margin-top: 50px;
  display: flex;
  justify-content: flex-start;
  align-items: center;
  flex-direction: column;
-}
+ box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
+}
+ .palm-tree-icon{
+  height:30px;
+  width:30px;
+ }
 .search-bar {
   display: flex;
   flex-direction: row;

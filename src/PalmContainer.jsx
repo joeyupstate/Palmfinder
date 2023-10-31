@@ -4,6 +4,7 @@ import Palms from "./components/Palms";
 import Zone from "./components/Zone";
 import { palmData } from "./Data";
 import searchIcon from "./assets/search-icon.png";
+
 import "./styles/PalmContainer.css";
 
 function PalmContainer(props) {
@@ -74,6 +75,7 @@ function PalmContainer(props) {
           tempurateRange={tempurateRange}
           tempTitle={tempTitle}
         />
+
         <Palms listItems={listItems} />
       </div>
     </div>

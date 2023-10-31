@@ -12,33 +12,69 @@
 .search-input:focus {
   outline: none !important;
 }
+::placeholder {
+  color: grey;
+  opacity: .75; /* Firefox */
+}
 
 /* styles for Zone.jsx */
 
+.zone-name{
+  color:#284038;
+  position: relative;
+
+}
+
+.zone-name::after {
+ content:"";
+ position:absolute;
+ bottom: -5px;
+    left: 6px;
+ height:5px;
+ width: 100px;
+ background-color: #a4c635;;
+}
 .zone-container {
   font-family: "Roboto";
 }
 
 .low-temp-range {
-  margin-top: -15px;
+  margin-top: -5px;
   text-align: center;
+  color:#284038;
 }
 .temp-range {
-  color: #949496;
+  color:#284038;
   margin-top: -15px;
   font-size: 12px;
   text-align: center;
+  color:#284038;
 }
 
 /* styles for Palms.jsx */
+.palm-tree-icon{
+  height:30px;
+  width:30px;
+ }
+ .palm-list-title{
+  font-family: "Roboto";
+   color:#284038;
+  font-weight: bold;
+ }
 .palm-list-container {
   margin-top: 30px;
   min-width: 250px;
   max-width: 250px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .palm-list {
-  list-style-type: none;
-  max-width: 80%;
+  /* list-style-type: none; */
+  display: inline-block;
+  text-align: left;
   font-family: "Roboto";
   margin-top: 20px;
 }
