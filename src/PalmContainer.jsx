@@ -69,7 +69,7 @@ function PalmContainer(props) {
         <Search setZipData={setZipData} />
         <img src={searchIcon} onClick={checkZip} className="search-icon" />
       </div>
-      <p className={pstyle}>Use this to application to see if you are able to grow palm trees in your city. </p>
+      <p className={pstyle}>Use this application to see if you can grow palm trees in your city. </p>
       <div className={style}>
         <Zone
           hardinessZone={hardinessZone}
