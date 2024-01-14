@@ -15,7 +15,11 @@
 
 }
 
-.search-bar {
+.search-bar-muted{
+  display: none;
+
+}
+.search-bar-active{
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -28,6 +32,16 @@
   box-shadow: 0 0 2px rgba(45, 45, 45, 0.2), 0 4px 8px rgba(45, 45, 45, 0.16),
     0 8px 16px rgba(45, 45, 45, 0.12);
 }
+.button-container-active{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.button-container-muted{
+  display: none;
+}
+
 .search-icon {
   height: 15px;
   width: 15px;
@@ -35,7 +49,72 @@
   margin-right: 4px;
   margin-top: 1px;
 }
+.confirm{
+  /* padding:10px 18px;
+  border:none;
+  outline: none;
+  margin:10px; */
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #5735C6;
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color:#5735C6;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin:10px;
+}
+.confirm:hover{
+  background-color: #5735C6;
+  color:white;
+}
 
+
+.deny{
+  appearance: none;
+  background-color: transparent;
+  border: 2px solid #5735C6;
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+  box-sizing: border-box;
+  color:#5735C6;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  padding: 6px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  margin :10px;
+
+}
+
+.deny:hover{
+  background-color: #5735C6;
+  color:white;
+}
 .p-muted{
   display: none;
 }

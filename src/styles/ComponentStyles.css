@@ -18,7 +18,9 @@
 }
 
 /* styles for Zone.jsx */
-
+.cityName{
+  text-align: center;
+}
 .zone-name{
   color:#284038;
   position: relative;
@@ -77,4 +79,5 @@
   text-align: left;
   font-family: "Roboto";
   margin-top: 20px;
+  
 }
