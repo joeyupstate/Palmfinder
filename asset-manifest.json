@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Palmfinder/static/css/main.a3283d0f.css",
-    "main.js": "/Palmfinder/static/js/main.2494cc2b.js",
+    "main.css": "/Palmfinder/static/css/main.6cd01f98.css",
+    "main.js": "/Palmfinder/static/js/main.3229ba0b.js",
     "index.html": "/Palmfinder/index.html",
-    "main.a3283d0f.css.map": "/Palmfinder/static/css/main.a3283d0f.css.map",
-    "main.2494cc2b.js.map": "/Palmfinder/static/js/main.2494cc2b.js.map"
+    "main.6cd01f98.css.map": "/Palmfinder/static/css/main.6cd01f98.css.map",
+    "main.3229ba0b.js.map": "/Palmfinder/static/js/main.3229ba0b.js.map"
   },
   "entrypoints": [
-    "static/css/main.a3283d0f.css",
-    "static/js/main.2494cc2b.js"
+    "static/css/main.6cd01f98.css",
+    "static/js/main.3229ba0b.js"
   ]
 }
