@@ -89,44 +89,47 @@ function PalmContainer(props) {
 
   //this runs if the use location feature is used
   async function checkZipLocation(zip) {
-    changeStyle(); //this is the above function that makes container visible
-    setPStyle("p-muted");
-    // setSearchStyle("search-bar-active");
+    if (window.confirm("Allow Palmfinder to access your location?")) {
+      changeStyle(); //this is the above function that makes container visible
+      setPStyle("p-muted");
+      // setSearchStyle("search-bar-active");
 
-    const url = `https://plant-hardiness-zone.p.rapidapi.com/zipcodes/${zip}`;
-    const options = {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Key":
-          "74d8672b18msh0a1e3329629ffabp1d9947jsndffb0cba6f05",
-        "X-RapidAPI-Host": "plant-hardiness-zone.p.rapidapi.com",
-      },
-    };
-    try {
-      const response = await fetch(url, options);
-      const result = await response.json();
-      const zone = result.hardiness_zone;
-      const palmList = palmData.find((palm) => palm.id === zone); //this searches the palmdata for the matching zone
-      const tempRange = palmList.temp;
-      const palmTrees = palmList.palms;
-      if (palmTrees.length === 0) {
-        setListItems("Im Sorry You Can't Grow Palm Trees In This Climate");
-      } else {
-        setListItems(
-          palmTrees.map((pt) => (
-            <li key={Math.random(Math.floor + 10)}>{pt}</li>
-          ))
-        );
+      const url = `https://plant-hardiness-zone.p.rapidapi.com/zipcodes/${zip}`;
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key":
+            "74d8672b18msh0a1e3329629ffabp1d9947jsndffb0cba6f05",
+          "X-RapidAPI-Host": "plant-hardiness-zone.p.rapidapi.com",
+        },
+      };
+      try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        const zone = result.hardiness_zone;
+        const palmList = palmData.find((palm) => palm.id === zone); //this searches the palmdata for the matching zone
+        const tempRange = palmList.temp;
+        const palmTrees = palmList.palms;
+        if (palmTrees.length === 0) {
+          setListItems("Im Sorry You Can't Grow Palm Trees In This Climate");
+        } else {
+          setListItems(
+            palmTrees.map((pt) => (
+              <li key={Math.random(Math.floor + 10)}>{pt}</li>
+            ))
+          );
+        }
+
+        sethardinessZone("Zone" + " " + zone);
+        setTempurateRange(tempRange);
+        setTempTitle("Max Low Temp");
+      } catch (error) {
+        console.error(error);
       }
 
-      sethardinessZone("Zone" + " " + zone);
-      setTempurateRange(tempRange);
-      setTempTitle("Max Low Temp");
-    } catch (error) {
-      console.error(error);
     }
-
   }
+
 
 
   async function getLocation() {
@@ -172,6 +175,9 @@ function PalmContainer(props) {
       console.error(error);
     }
   }
+
+
+
 
   return (
     <div className="container">

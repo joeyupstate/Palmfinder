@@ -65,8 +65,8 @@
  }
 .palm-list-container {
   margin-top: 30px;
-  min-width: 250px;
-  max-width: 250px;
+  min-width: 300px;
+  max-width: 300px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -76,8 +76,19 @@
 .palm-list {
   /* list-style-type: none; */
   display: inline-block;
-  text-align: left;
+  text-align: center;
   font-family: "Roboto";
   margin-top: 20px;
+  list-style: none;
+  padding-left: 0;
+  padding-bottom: 20px;
   
+}
+.palm-list li{
+
+  font-style: italic;
+  margin:5px;
+}
+.palm-list li::marker{
+display: none!important;
 }
